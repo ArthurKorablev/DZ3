@@ -1,18 +1,15 @@
 let age = prompt("What year were you born?");
-let yaer = new Date;
-if (age) {
-  age = `Your age is ${yaer.getFullYear() - age}`;  
-} else {
-    alert("Sorry you did not type youre age");
-}
+let yaer = new Date();
+
+age = !age ? "Sorry you did not type youre age" : `Your age is ${yaer.getFullYear() - age.trim()}`;
 
 let city = prompt("What city do you live in?");
 if (!city) alert("Sorry you did not type your city");
-city == null ? city = "(not specifitd)" : city = city.toLowerCase();
+city = !city ? "(not specifitd)" : city.toLowerCase();
 
 let sport = prompt("What's your favorite kind of sport? Box, football or tenis");
 if (!sport) alert("Sorry you did not type your sport");
-sport == null ? sport = "(not specifitd)" : sport = sport.toLowerCase();
+sport = !sport ? "(not specifitd)" : sport.toLowerCase();
 
 
 if (city != "" && city == "london") {
