@@ -1,14 +1,21 @@
 let age = prompt("What year were you born?");
 let yaer = new Date;
+if (age) {
+  age = `Your age is ${yaer.getFullYear() - age}`;  
+} else {
+    alert("Sorry you did not type youre age");
+}
+
 let city = prompt("What city do you live in?");
+if (!city) alert("Sorry you did not type your city");
+city == null ? city = "(not specifitd)" : city = city.toLowerCase();
+
 let sport = prompt("What's your favorite kind of sport? Box, football or tenis");
+if (!sport) alert("Sorry you did not type your sport");
+sport == null ? sport = "(not specifitd)" : sport = sport.toLowerCase();
 
-age = `Your age is ${yaer.getFullYear() - age}`;
 
-//console.log(city);
-city == null ? "" : city.toLowerCase(); 
-
-if (city == "london") {
+if (city != "" && city == "london") {
     city = "You live in the capital of Great Britian";
 } else if (city == "kyiv") {
     city = "You live in the capital of Ukraine";
@@ -19,24 +26,23 @@ if (city == "london") {
 }
 
 
-if (sport.toLowerCase() == 'box' || sport.toLowerCase() == 'бокс') {
+if (sport.toLowerCase() == 'box') {
     sport = "Great! Do you wanna be as Usik";
-} else if (sport.toLowerCase() == 'football' || sport.toLowerCase() == 'футбол') {
+} else if (sport.toLowerCase() == 'football') {
     sport = "Great! Do you wanna be as Messi";
-} else if (sport.toLowerCase() == 'tenis' || sport.toLowerCase() == 'тенис') {
+} else if (sport.toLowerCase() == 'tenis') {
     sport = "Great! Do you wanna be as Nadal";
 } else {
     sport = `Great! You like ${sport}`;
 }
 
-console.log(age, city, sport);
 
-if (age == null) {
-    alert("Sorry you did not type your age");
-} else if (age && city == null && sport) {
-    alert("Sorry you did not type your city");
-} else if (sport == null) {
-    alert("Sorry you did not type your favorite city");
+if (age == yaer.getFullYear()) {
+    alert(`${city}. ${sport}`);
+} else if (city == "You live in (not specifitd)") {
+    alert(`${age}. ${sport}`);
+} else if (sport == "Great! You like (not specifitd)") {
+   alert(`${age}. ${city}`); 
 } else {
     alert(`${age}. ${city}. ${sport}`);
 }
